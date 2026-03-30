@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Gaming Hub | Setup & Ofertas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root { 
+            --ps-blue: #0072ce; 
+            --xbox-green: #107c10; 
+            --nintendo-red: #e60012; 
+        }
+        body { 
+            background-color: #030303; 
+            color: #e5e7eb; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        .font-gaming { font-family: 'Orbitron', sans-serif; }
+        
+        /* Glassmorphism Refinado */
+        .glass { 
+            background: rgba(15, 15, 20, 0.6); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.05); 
+        }
+        
+        /* Efeito de Card Premium */
+        .card-glow { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-glow:hover { 
+            border-color: rgba(0, 114, 206, 0.5); 
+            box-shadow: 0 10px 40px -10px rgba(0, 114, 206, 0.3); 
+            transform: translateY(-4px); 
+        }
+
+        /* Botão com efeito de Brilho (Shine) */
+        .btn-gradient { 
+            background: linear-gradient(90deg, #005ba6, #00b4ff, #005ba6); 
+            background-size: 200% auto;
+            transition: 0.5s; 
+        }
+        .btn-gradient:hover { 
+            background-position: right center;
+            box-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Badge Pulsante Moderno */
+        .badge-live { 
+            position: absolute; top: 1rem; right: 1rem; 
+            background: linear-gradient(45deg, #ef4444, #b91c1c); 
+            padding: 4px 14px; border-radius: 20px; 
+            font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+            animation: pulse-red 2s infinite; 
+            z-index: 10;
+        }
+        @keyframes pulse-red { 
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); } 
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); } 
+        }
+
+        /* Efeito Menu Gamer nos Links */
+        .link-hover-effect:hover {
+            transform: translateX(8px);
+            background: rgba(255,255,255,0.1);
+            border-left-color: var(--ps-blue);
+        }
+    </style>
+</head>
+<body class="antialiased relative">
+
+    <!-- Efeitos de Luz de Fundo (Cyberpunk vibe) -->
+    <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+    <div class="absolute top-[40%] right-[-10%] w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass border-b border-white/5 px-4 py-3 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-800 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i class="fas fa-gamepad text-white text-xl"></i>
+                </div>
+                <span class="font-gaming text-2xl font-black tracking-widest text-white">ELITE<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">HUB</span></span>
+            </div>
+
+            <div class="relative w-full md:w-96 group">
+                <input type="text" id="mainSearch" placeholder="Qual jogo ou console busca?" 
+                       class="w-full bg-black/50 border border-white/10 rounded-xl py-2.5 px-5 text-sm focus:outline-none focus:border-blue-500 focus:bg-white/5 transition-all text-white placeholder-gray-500">
+                <button onclick="executarBusca()" class="absolute right-2 top-1.5 bottom-1.5 px-3 bg-white/5 rounded-lg text-blue-400 hover:text-white hover:bg-blue-600 transition flex items-center justify-center">
+                    <i class="fas fa-search text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-16 pb-20 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-gaming text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-lg">
+                DOMINE O <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500">CAMPO DE BATALHA</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+                A curadoria definitiva para quem busca performance extrema em Warzone, RPGs épicos e imersão total na Nova Geração.
+            </p>
+            
+            <!-- DESTAQUE PRINCIPAL (PS5) -->
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-1.5 overflow-hidden relative group card-glow">
+                <div class="badge-live uppercase tracking-widest"><i class="fas fa-fire mr-1"></i> Oferta Full</div>
+                
+                <div class="bg-[#0a0a0d] rounded-[1.25rem] flex flex-col md:flex-row items-center p-6 gap-8 h-full border border-white/5">
+                    <!-- Imagem Real Unsplash -->
+                    <div class="w-full md:w-1/2 relative overflow-hidden rounded-2xl group-hover:shadow-2xl transition">
+                        <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=800&auto=format&fit=crop" alt="PS5" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 flex gap-2">
+                            <span class="bg-black/60 backdrop-blur text-white text-[10px] px-2 py-1 rounded border border-white/10"><i class="fas fa-check-circle text-green-400"></i> Original Sony</span>
+                        </div>
+                    </div>
+
+                    <div class="text-left flex-1 flex flex-col justify-center">
+                        <h2 class="text-3xl font-bold text-white mb-3 font-gaming">PlayStation 5 Slim <span class="text-blue-500">1TB</span></h2>
+                        
+                        <div class="flex flex-wrap items-center gap-3 mb-4 text-xs font-semibold">
+                            <span class="bg-green-500/10 text-green-400 px-3 py-1.5 rounded-lg border border-green-500/20"><i class="fas fa-truck-fast"></i> Chega Amanhã</span>
+                            <span class="bg-blue-500/10 text-blue-400 px-3 py-1.5 rounded-lg border border-blue-500/20"><i class="fas fa-shield-alt"></i> Garantia 1 Ano</span>
+                        </div>
+                        
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">SSD NVMe ultrarrápido, feedback háptico e gráficos em 4K HDR a 120 FPS. O console definitivo para sua gameplay.</p>
+                        
+                        <!-- Barra de Escassez -->
+                        <div class="w-full bg-gray-800 rounded-full h-1.5 mb-2">
+                            <div class="bg-red-500 h-1.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-red-400 mb-5 font-semibold"><i class="fas fa-clock"></i> Restam apenas 3 unidades no menor preço</p>
+
+                        <a href="https://meli.la/13oZUyZ" target="_blank" class="block w-full text-center py-4 rounded-xl font-bold btn-gradient text-white uppercase tracking-widest flex justify-center items-center gap-2">
+                            Garantir Meu PS5 Agora <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <!-- GRID DE CONSOLES SECUNDÁRIOS -->
+        <div class="mb-20">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-8 w-1.5 bg-blue-500 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+                <h3 class="text-2xl font-black font-gaming tracking-wide">PORTÁTEIS & CUSTO-BENEFÍCIO</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- SWITCH -->
+                <div class="glass p-5 rounded-2xl card-glow flex flex-col group border border-white/5">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48">
+                        <img src="https://images.unsplash.com/photo-1617096200347-cb04ae810b1d?q=80&w=800&auto=format&fit=crop" alt="Nintendo Switch" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <span class="text-xs text-[#e60012] font-bold tracking-widest mb-1 uppercase">Família & Portátil</span>
+                    <h4 class="font-bold text-xl mb-2 text-white">Nintendo Switch OLED</h4>
+                    <p class="text-gray-400 text-sm mb-6 flex-1">Cores vibrantes na tela OLED. Jogue Zelda e Mario onde e quando quiser.</p>
+                    <div class="mt-auto flex justify-between items-center border-t border-white/10 pt-4">
+                        <div>
+                            <span class="block text-xs text-gray-500 line-through">R$ 2.499</span>
+                            <span class="text-xl font-bold text-white">R$ 1.990</span>
+                        </div>
+                        <a href="https://lista.mercadolivre.com.br/nintendo-switch-oled#D[A:nintendo%20switch%20oled]" target="_blank" class="bg-white/10 hover:bg-[#e60012] text-white px-4 py-2 rounded-lg text-sm font-bold transition">Ver Loja</a>
+                    </div>
+                </div>
+
+                <!-- XBOX -->
+                <div class="glass p-5 rounded-2xl card-glow flex flex-col group border border-white/5">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48 relative">
+                        <img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?q=80&w=800&auto=format&fit=crop" alt="Xbox Series S" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-2 right-2 bg-[#107c10] text-white text-[10px] font-bold px-2 py-1 rounded">Game Pass</div>
+                    </div>
+                    <span class="text-xs text-[#107c10] font-bold tracking-widest mb-1 uppercase">Melhor Custo x Benefício</span>
+                    <h4 class="font-bold text-xl mb-2 text-white">Xbox Series S</h4>
+                    <p class="text-gray-400 text-sm mb-6 flex-1">Velocidade Next-Gen em formato digital. Perfeito para assinar o Game Pass.</p>
+                    <div class="mt-auto flex justify-between items-center border-t border-white/10 pt-4">
+                        <div>
+                            <span class="block text-xs text-gray-500 line-through">R$ 2.999</span>
+                            <span class="text-xl font-bold text-white">R$ 2.490</span>
+                        </div>
+                        <a href="https://lista.mercadolivre.com.br/xbox-series-s#D[A:xbox%20series%20s]" target="_blank" class="bg-white/10 hover:bg-[#107c10] text-white px-4 py-2 rounded-lg text-sm font-bold transition">Ver Loja</a>
+                    </div>
+                </div>
+
+                <!-- STEAM DECK -->
+                <div class="glass p-5 rounded-2xl card-glow flex flex-col group border border-white/5">
+                    <div class="overflow-hidden rounded-xl mb-4 h-48">
+                        <img src="https://images.unsplash.com/photo-1704558509378-01389e92d7db?q=80&w=800&auto=format&fit=crop" alt="Steam Deck" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <span class="text-xs text-blue-400 font-bold tracking-widest mb-1 uppercase">PC Master Race de Bolso</span>
+                    <h4 class="font-bold text-xl mb-2 text-white">Steam Deck OLED</h4>
+                    <p class="text-gray-400 text-sm mb-6 flex-1">Toda a sua biblioteca da Steam rodando nativamente na palma da mão.</p>
+                    <div class="mt-auto flex justify-between items-center border-t border-white/10 pt-4">
+                        <div>
+                            <span class="block text-xs text-gray-500">A partir de</span>
+                            <span class="text-xl font-bold text-white">R$ 4.290</span>
+                        </div>
+                        <a href="https://lista.mercadolivre.com.br/steam-deck#D[A:steam%20deck]" target="_blank" class="bg-white/10 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition">Ver Loja</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO DE CROSS-SELL (GIFT CARDS E JOGOS) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- CARDS DE SALDO -->
+            <div class="glass p-1 rounded-3xl bg-gradient-to-br from-yellow-500/20 to-transparent relative overflow-hidden group">
+                <div class="bg-[#0f0f13] p-8 rounded-[1.4rem] h-full">
+                    <h3 class="text-2xl font-black mb-6 flex items-center gap-3 font-gaming text-white">
+                        <i class="fas fa-wallet text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.8)]"></i> Saldo & Assinaturas
+                    </h3>
+                    <div class="space-y-3">
+                        <a href="https://lista.mercadolivre.com.br/gift-card-psn#D[A:gift%20card%20psn]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><i class="fab fa-playstation text-blue-500 text-xl"></i> <span class="font-semibold text-gray-200">Cartão PSN (R$ 50 a R$ 300)</span></div>
+                            <i class="fas fa-chevron-right text-xs text-gray-500"></i>
+                        </a>
+                        <a href="https://lista.mercadolivre.com.br/gift-card-xbox#D[A:gift%20card%20xbox]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><i class="fab fa-xbox text-green-500 text-xl"></i> <span class="font-semibold text-gray-200">Game Pass Ultimate (1 Mês)</span></div>
+                            <i class="fas fa-chevron-right text-xs text-gray-500"></i>
+                        </a>
+                        <a href="https://lista.mercadolivre.com.br/roblox-gift-card#D[A:roblox]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><i class="fas fa-coins text-yellow-500 text-xl"></i> <span class="font-semibold text-gray-200">Robux / Moedas In-Game</span></div>
+                            <i class="fas fa-chevron-right text-xs text-gray-500"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JOGOS -->
+            <div class="glass p-1 rounded-3xl bg-gradient-to-br from-blue-500/20 to-transparent relative overflow-hidden group">
+                <div class="bg-[#0f0f13] p-8 rounded-[1.4rem] h-full">
+                    <h3 class="text-2xl font-black mb-6 flex items-center gap-3 font-gaming text-white">
+                        <i class="fas fa-compact-disc text-blue-500 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"></i> Jogos Físicos & Lançamentos
+                    </h3>
+                    <div class="space-y-3">
+                        <a href="https://lista.mercadolivre.com.br/jogos-ps5#D[A:jogos%20ps5]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><span class="font-semibold text-gray-200">Top Vendas PS5</span></div>
+                            <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 rounded font-bold uppercase">Mais Buscado</span>
+                        </a>
+                        <a href="https://lista.mercadolivre.com.br/ea-sports-fc-25#D[A:ea%20sports%20fc%2025]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><span class="font-semibold text-gray-200">EA Sports FC 25</span></div>
+                            <i class="fas fa-chevron-right text-xs text-gray-500"></i>
+                        </a>
+                        <a href="https://lista.mercadolivre.com.br/gta-v-premium#D[A:gta%20v]" target="_blank" class="flex items-center justify-between p-4 bg-white/5 border-l-4 border-transparent rounded-xl link-hover-effect transition-all cursor-pointer">
+                            <div class="flex items-center gap-3"><span class="font-semibold text-gray-200">GTA V Premium Edition</span></div>
+                            <i class="fas fa-chevron-right text-xs text-gray-500"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-4 border-t border-white/5 bg-black/50 text-center text-gray-500 mt-10">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <div class="flex gap-4 mb-6 text-2xl">
+                <i class="fab fa-cc-visa opacity-50"></i>
+                <i class="fab fa-cc-mastercard opacity-50"></i>
+                <i class="fab fa-pix opacity-50"></i>
+            </div>
+            <p class="text-sm mb-4 italic text-gray-400">"Performance não é opção, é obrigação."</p>
+            <p class="text-[10px] uppercase tracking-widest leading-loose">
+                Ofertas verificadas em tempo real | Links de Afiliado 100% Seguros | Mercado Livre Brasil<br>
+                © 2024 Elite Gaming Hub. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE BUSCA E UX -->
+    <script>
+        function executarBusca() {
+            const input = document.getElementById('mainSearch');
+            const query = input.value.trim();
+            
+            if(query !== "") {
+                const formattedQuery = query.replace(/\s+/g, "-");
+                window.open(`https://lista.mercadolivre.com.br/${formattedQuery}`, '_blank');
+                input.value = ''; // Limpa após a busca
+            } else {
+                // Efeito de "Tremer" e borda vermelha se a busca for vazia
+                input.classList.add('border-red-500', 'animate-pulse');
+                setTimeout(() => {
+                    input.classList.remove('border-red-500', 'animate-pulse');
+                }, 1000);
+            }
+        }
+
+        document.getElementById('mainSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                executarBusca();
+            }
+        });
+    </script>
+</body>
+</html>
