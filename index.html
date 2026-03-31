@@ -3,126 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Gaming Hub | Melhores Ofertas PS5 e Acessórios</title>
+    <title>Elite Gaming Hub | A Maior Vitrine Gamer do Brasil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #3b82f6; --dark: #0a0a0c; --glass: rgba(255, 255, 255, 0.03); }
-        body { background-color: var(--dark); font-family: 'Inter', sans-serif; color: #fff; }
+        :root { --main: #3b82f6; --dark-bg: #050505; --card-bg: rgba(255, 255, 255, 0.03); }
+        body { background-color: var(--dark-bg); font-family: 'Inter', sans-serif; color: #fff; scroll-behavior: smooth; }
         .font-gaming { font-family: 'Orbitron', sans-serif; }
-        .glass { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
-        .card-glow:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); transition: 0.3s; }
-        .gradient-text { background: linear-gradient(90deg, #3b82f6, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { transform: translateY(-10px); border-color: var(--main); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15); }
+        .nav-link:hover { color: var(--main); text-shadow: 0 0 8px rgba(59, 130, 246, 0.6); }
+        .badge-full { background: linear-gradient(90deg, #fff000, #eedd00); color: #000; font-weight: 900; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--main); }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <header class="relative py-16 px-4 overflow-hidden border-b border-white/5">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full blur-[120px]"></div>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="font-gaming font-black text-xl tracking-tighter text-white">ELITE <span class="text-blue-500">HUB</span></h1>
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#consoles" class="nav-link transition">Consoles</a>
+                <a href="#portateis" class="nav-link transition">Portáteis</a>
+                <a href="#acessorios" class="nav-link transition">Acessórios</a>
+                <a href="#retro" class="nav-link transition">Retro/Emuladores</a>
+            </div>
+            <a href="https://lista.mercadolivre.com.br/games" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-[10px] font-black uppercase transition shadow-lg shadow-blue-900/20">Ver Tudo</a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+            <div class="absolute top-20 left-1/4 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-[120px]"></div>
         </div>
         
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-black font-gaming mb-4 uppercase tracking-tighter">
-                Elite <span class="gradient-text">Gaming</span> Hub
-            </h1>
-            <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                A curadoria definitiva de hardware e acessórios originais com o selo <strong>Mercado Livre Full</strong>.
-            </p>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-block px-3 py-1 border border-blue-500/30 rounded-full text-[10px] font-bold text-blue-400 mb-6 uppercase tracking-widest animate-pulse">
+                Upgrade Your Gear 2026
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black font-gaming mb-6 leading-none">O UNIVERSO <span class="text-blue-500">GAMER</span> EM UM SÓ LUGAR.</h2>
+            <p class="text-gray-400 text-lg md:text-xl mb-10 font-light leading-relaxed">Curadoria profissional de hardware, periféricos e jogos. Tudo com a garantia de entrega <strong>Full do Mercado Livre</strong>.</p>
             
-            <div class="inline-flex items-center gap-4 bg-red-500/10 border border-red-500/20 px-6 py-3 rounded-full mb-4">
-                <span class="text-red-500 animate-pulse text-sm font-bold">● OFERTAS DE HOJE EXPIRAM EM:</span>
-                <div id="timer" class="font-gaming text-lg text-white font-bold tracking-widest">00:00:00</div>
+            <div class="max-w-md mx-auto relative group">
+                <input type="text" placeholder="Pesquisar PS5, Controles, Jogos..." class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:border-blue-500 transition text-sm">
+                <i class="fas fa-search absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-blue-500 transition"></i>
             </div>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto px-4 py-12">
-        <div class="flex items-center justify-between mb-8">
-            <div class="flex items-center gap-3">
-                <div class="h-8 w-1 bg-yellow-500"></div>
-                <h3 class="text-2xl font-bold font-gaming text-white uppercase tracking-tight">Os Mais Vendidos do Brasil</h3>
+    <section id="consoles" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Main Gear</span>
+                <h3 class="text-3xl font-gaming font-black mt-1">CONSOLES NEXT-GEN</h3>
             </div>
-            <span class="hidden md:block text-[10px] text-gray-500 uppercase tracking-widest">Estoque Nacional Atualizado</span>
+            <div class="h-[1px] flex-1 bg-white/5 mx-8 mb-3 hidden md:block"></div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            
-            <div class="glass p-4 rounded-2xl card-glow flex flex-col relative">
-                <span class="absolute top-2 left-2 bg-yellow-600 text-[10px] font-bold px-2 py-1 rounded italic text-white shadow-lg">#1 VENDAS</span>
-                <img src="https://http2.mlstatic.com/D_NQ_NP_672520-MLA45347209774_032021-O.webp" class="rounded-xl mb-3 w-full h-32 object-contain bg-white/5 p-2">
-                <h4 class="font-bold text-sm text-gray-200 mb-1 leading-tight">DualSense PS5 - Original</h4>
-                <div class="flex items-center gap-1 mb-3">
-                    <i class="fas fa-star text-yellow-500 text-[10px]"></i>
-                    <span class="text-[10px] text-gray-400">4.9 (20k+ reviews)</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-6 rounded-3xl product-card group">
+                <div class="relative mb-6 overflow-hidden rounded-2xl aspect-square flex items-center justify-center bg-white/5">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_753443-MLU74384482431_022024-O.webp" class="w-4/5 object-contain group-hover:scale-110 transition duration-500">
+                    <div class="absolute top-4 right-4 badge-full px-3 py-1 rounded-md text-[10px]">FULL</div>
                 </div>
-                <div class="mt-auto">
-                    <div class="text-green-500 text-[10px] font-bold mb-2 uppercase tracking-wide"><i class="fas fa-bolt"></i> Envio Full Grátis</div>
-                    <a href="https://lista.mercadolivre.com.br/dualsense-ps5" target="_blank" class="block w-full text-center py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs font-bold text-white transition">RESGATAR OFERTA</a>
-                </div>
+                <h4 class="text-xl font-bold mb-2">PlayStation 5 Slim 1TB</h4>
+                <p class="text-gray-500 text-xs mb-6 leading-relaxed">Versão nacional com leitor de disco e 2 jogos inclusos no pack.</p>
+                <a href="https://meli.la/13oZUyZ" target="_blank" class="block w-full py-4 bg-white text-black text-center rounded-xl font-black text-xs uppercase hover:bg-blue-500 hover:text-white transition shadow-xl">Ver Menor Preço</a>
             </div>
 
-            <div class="glass p-4 rounded-2xl card-glow flex flex-col">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_888497-MLA44030613247_112020-O.webp" class="rounded-xl mb-3 w-full h-32 object-contain bg-white/5 p-2">
-                <h4 class="font-bold text-sm text-gray-200 mb-1 leading-tight">Headset Pulse 3D Wireless</h4>
-                <p class="text-[10px] text-gray-500 mb-3 italic">Ideal para Warzone 2026</p>
-                <div class="mt-auto text-center">
-                    <a href="https://lista.mercadolivre.com.br/pulse-3d" target="_blank" class="block w-full py-2 border border-blue-500/30 hover:border-blue-500 rounded-lg text-xs font-bold text-blue-400 transition">VER PREÇO</a>
+            <div class="glass p-6 rounded-3xl product-card group border-green-500/10">
+                <div class="relative mb-6 overflow-hidden rounded-2xl aspect-square flex items-center justify-center bg-white/5">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_895261-MLA43486302787_092020-O.webp" class="w-4/5 object-contain group-hover:scale-110 transition duration-500">
+                    <div class="absolute top-4 right-4 badge-full px-3 py-1 rounded-md text-[10px]">FULL</div>
                 </div>
+                <h4 class="text-xl font-bold mb-2">Xbox Series X 1TB</h4>
+                <p class="text-gray-500 text-xs mb-6 leading-relaxed">O console mais potente da Microsoft com resolução 4K nativa.</p>
+                <a href="https://lista.mercadolivre.com.br/xbox-series-x#D[A:xbox%20series%20x]" target="_blank" class="block w-full py-4 border border-white/20 text-center rounded-xl font-black text-xs uppercase hover:bg-green-600 hover:border-green-600 transition">Conferir Oferta</a>
             </div>
 
-            <div class="glass p-4 rounded-2xl card-glow flex flex-col">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_600869-MLA44030438676_112020-O.webp" class="rounded-xl mb-3 w-full h-32 object-contain bg-white/5 p-2">
-                <h4 class="font-bold text-sm text-gray-200 mb-1 leading-tight">Base Carregadora Sony</h4>
-                <p class="text-[10px] text-gray-500 mb-3">Carrega 2 controles simult.</p>
-                <div class="mt-auto text-center">
-                    <a href="https://lista.mercadolivre.com.br/base-carregamento-ps5" target="_blank" class="block w-full py-2 border border-blue-500/30 hover:border-blue-500 rounded-lg text-xs font-bold text-blue-400 transition">VER PREÇO</a>
+            <div class="glass p-6 rounded-3xl product-card group border-red-500/10">
+                <div class="relative mb-6 overflow-hidden rounded-2xl aspect-square flex items-center justify-center bg-white/5">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_833333-MLA51478149868_092022-O.webp" class="w-4/5 object-contain group-hover:scale-110 transition duration-500">
+                    <div class="absolute top-4 right-4 badge-full px-3 py-1 rounded-md text-[10px]">FULL</div>
                 </div>
+                <h4 class="text-xl font-bold mb-2">Nintendo Switch OLED</h4>
+                <p class="text-gray-500 text-xs mb-6 leading-relaxed">Tela vibrante e portabilidade total para os exclusivos da Nintendo.</p>
+                <a href="https://lista.mercadolivre.com.br/nintendo-switch-oled#D[A:nintendo%20switch%20oled]" target="_blank" class="block w-full py-4 border border-white/20 text-center rounded-xl font-black text-xs uppercase hover:bg-red-600 hover:border-red-600 transition">Conferir Oferta</a>
             </div>
-
-            <div class="glass p-4 rounded-2xl card-glow flex flex-col border border-yellow-500/30">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_753443-MLU74384482431_022024-O.webp" class="rounded-xl mb-3 w-full h-32 object-contain bg-white/5 p-2">
-                <h4 class="font-bold text-sm text-gray-200 mb-1 leading-tight">PlayStation 5 Slim + Jogos</h4>
-                <div class="bg-yellow-500/10 text-yellow-500 text-[10px] py-1 px-2 rounded mb-3 inline-block font-bold">ESTOQUE BRASIL</div>
-                <div class="mt-auto">
-                    <a href="https://meli.la/13oZUyZ" target="_blank" class="block w-full text-center py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-xs font-bold text-black transition">MELHOR VALOR</a>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500">
-        <p class="text-sm font-gaming uppercase tracking-widest mb-2">Elite Gaming Hub</p>
-        <p class="text-[10px] mb-4">Parceiro Afiliado Mercado Livre Brasil. Garantia de entrega em todo o território nacional.</p>
-        <div class="flex justify-center gap-6 text-xl">
-            <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+    <section id="portateis" class="bg-white/[0.02] py-20 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mb-12">
+                <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Handhelds</span>
+                <h3 class="text-3xl font-gaming font-black mt-1">EMULADORES E PORTÁTEIS</h3>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="glass p-4 rounded-2xl product-card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_918512-MLU72688096238_112023-O.webp" class="w-full h-32 object-contain mb-4">
+                    <h5 class="text-sm font-bold mb-1 italic">Asus ROG Ally</h5>
+                    <p class="text-[10px] text-gray-500 mb-4">PC Gamer de bolso</p>
+                    <a href="https://lista.mercadolivre.com.br/rog-ally" target="_blank" class="block w-full py-2 bg-blue-600/20 text-blue-400 rounded-lg text-[10px] font-bold text-center uppercase tracking-tighter hover:bg-blue-600 hover:text-white transition">Ver Detalhes</a>
+                </div>
+                <div class="glass p-4 rounded-2xl product-card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_727931-MLU74151741753_012024-O.webp" class="w-full h-32 object-contain mb-4">
+                    <h5 class="text-sm font-bold mb-1 italic">Game Stick 4K</h5>
+                    <p class="text-[10px] text-gray-500 mb-4">10.000+ Jogos Retro</p>
+                    <a href="https://lista.mercadolivre.com.br/game-stick-4k" target="_blank" class="block w-full py-2 bg-blue-600/20 text-blue-400 rounded-lg text-[10px] font-bold text-center uppercase tracking-tighter hover:bg-blue-600 hover:text-white transition">Ver Detalhes</a>
+                </div>
+                <div class="glass p-4 rounded-2xl product-card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_667230-MLU74507024823_022024-O.webp" class="w-full h-32 object-contain mb-4">
+                    <h5 class="text-sm font-bold mb-1 italic">Console R36S</h5>
+                    <p class="text-[10px] text-gray-500 mb-4">Emulação Profissional</p>
+                    <a href="https://lista.mercadolivre.com.br/r36s" target="_blank" class="block w-full py-2 bg-blue-600/20 text-blue-400 rounded-lg text-[10px] font-bold text-center uppercase tracking-tighter hover:bg-blue-600 hover:text-white transition">Ver Detalhes</a>
+                </div>
+                <div class="glass p-4 rounded-2xl product-card">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_779435-MLA54238510842_032023-O.webp" class="w-full h-32 object-contain mb-4">
+                    <h5 class="text-sm font-bold mb-1 italic">Steam Deck OLED</h5>
+                    <p class="text-[10px] text-gray-500 mb-4">Poder Máximo Valve</p>
+                    <a href="https://lista.mercadolivre.com.br/steam-deck" target="_blank" class="block w-full py-2 bg-blue-600/20 text-blue-400 rounded-lg text-[10px] font-bold text-center uppercase tracking-tighter hover:bg-blue-600 hover:text-white transition">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="acessorios" class="max-w-7xl mx-auto px-4 py-20">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
+            <h3 class="text-3xl font-gaming font-black uppercase">Periféricos de <span class="text-blue-500">Elite</span></h3>
+            <div class="flex gap-2">
+                <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold">CONTROLES</span>
+                <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold">HEADSETS</span>
+                <span class="px-4 py-2 bg-white/5 rounded-full text-[10px] font-bold">SETUP</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass p-5 rounded-2xl product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_601831-MLU71373507119_082023-O.webp" class="w-full h-40 object-contain mb-4">
+                <div class="text-xs font-black text-blue-500 mb-1">PRO CONTROLLER</div>
+                <h4 class="text-sm font-bold mb-4 uppercase">DualSense Edge Wireless</h4>
+                <a href="https://lista.mercadolivre.com.br/dualsense-edge" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-lg text-[10px] font-black text-center transition shadow-lg">COMPRAR AGORA</a>
+            </div>
+            <div class="glass p-5 rounded-2xl product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_888497-MLA44030613247_112020-O.webp" class="w-full h-40 object-contain mb-4">
+                <div class="text-xs font-black text-blue-500 mb-1">ÁUDIO IMERSIVO</div>
+                <h4 class="text-sm font-bold mb-4 uppercase">Headset Pulse 3D Sony</h4>
+                <a href="https://lista.mercadolivre.com.br/pulse-3d" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-lg text-[10px] font-black text-center transition shadow-lg">COMPRAR AGORA</a>
+            </div>
+            <div class="glass p-5 rounded-2xl product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_900350-MLU74768340263_022024-O.webp" class="w-full h-40 object-contain mb-4">
+                <div class="text-xs font-black text-blue-500 mb-1">PC GAMING</div>
+                <h4 class="text-sm font-bold mb-4 uppercase">Teclado Mecânico RGB</h4>
+                <a href="https://lista.mercadolivre.com.br/teclado-mecanico-gamer" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-lg text-[10px] font-black text-center transition shadow-lg">COMPRAR AGORA</a>
+            </div>
+            <div class="glass p-5 rounded-2xl product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_994966-MLU72619028972_112023-O.webp" class="w-full h-40 object-contain mb-4">
+                <div class="text-xs font-black text-blue-500 mb-1">PERFORMANCE</div>
+                <h4 class="text-sm font-bold mb-4 uppercase">Monitor 144Hz 1ms</h4>
+                <a href="https://lista.mercadolivre.com.br/monitor-gamer-144hz" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-lg text-[10px] font-black text-center transition shadow-lg">COMPRAR AGORA</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="font-gaming font-black text-3xl mb-4">ELITE <span class="text-blue-500">GAMING</span> HUB</h2>
+            <p class="text-gray-500 text-sm max-w-xl mx-auto mb-8 italic">Como técnico e jogador de Warzone, eu seleciono pessoalmente cada item desta vitrine. Compre com segurança via Mercado Livre.</p>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div class="text-[10px] text-gray-600 uppercase tracking-widest border-t border-white/5 pt-8">
+                &copy; 2026 Elite Hub | Criado por André Luiz Work | Parceiro Oficial Mercado Livre Full
+            </div>
         </div>
     </footer>
 
-    <script>
-        // SCRIPT DO CRONÔMETRO
-        function startTimer(duration, display) {
-            var timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = parseInt(timer / 3600, 10);
-                minutes = parseInt((timer % 3600) / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                display.textContent = hours + ":" + minutes + ":" + seconds;
-                if (--timer < 0) { timer = duration; }
-            }, 1000);
-        }
-        window.onload = function () {
-            var duration = 60 * 60 * 4; // 4 horas
-            var display = document.querySelector('#timer');
-            startTimer(duration, display);
-        };
-    </script>
 </body>
 </html>
 
