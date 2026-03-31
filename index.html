@@ -13,103 +13,130 @@
         .font-gaming { font-family: 'Orbitron', sans-serif; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
         .product-card { transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); border-color: var(--main); }
-        .img-container { background: #fff; border-radius: 12px; padding: 10px; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .img-container img { max-height: 100%; max-width: 100%; object-contain: contain; }
+        .product-card:hover { transform: translateY(-5px); border-color: var(--main); box-shadow: 0 10px 30px rgba(59,130,246,0.1); }
+        .img-container { background: rgba(255,255,255,0.02); border-radius: 12px; padding: 15px; height: 180px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .img-container img { max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); transition: transform 0.3s ease; }
+        .product-card:hover .img-container img { transform: scale(1.1); }
+        .badge-full { background: linear-gradient(90deg, #fff000, #eedd00); color: #000; font-weight: 900; }
     </style>
 </head>
-<body class="pb-20">
+<body class="pb-20 antialiased">
 
-    <nav class="sticky top-0 z-50 glass py-4 px-6 mb-8">
+    <nav class="sticky top-0 z-50 glass py-4 px-6 mb-12 border-b border-white/5">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <h1 class="font-gaming font-black text-xl tracking-tighter italic">ELITE <span class="text-blue-500 text-not-italic">HUB</span></h1>
-            <a href="https://www.mercadolivre.com.br" target="_blank" class="text-[10px] font-bold bg-blue-600 px-4 py-2 rounded-full uppercase">Loja Completa</a>
+            <a href="https://lista.mercadolivre.com.br/games" target="_blank" class="text-[10px] font-bold bg-blue-600 px-5 py-2 rounded-full uppercase tracking-widest hover:bg-blue-500 transition shadow-lg shadow-blue-900/50">Ver Loja Completa</a>
         </div>
     </nav>
 
-    <div class="max-w-7xl mx-auto px-4 text-center mb-12">
-        <h2 class="text-4xl font-black font-gaming mb-2 uppercase">Vitrine de Elite</h2>
-        <p class="text-gray-500 text-sm italic">Produtos originais com envio imediato para todo o Brasil.</p>
+    <div class="max-w-7xl mx-auto px-4 text-center mb-16 mt-8 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="inline-block px-4 py-1 border border-blue-500/30 rounded-full text-[10px] font-bold text-blue-400 mb-6 uppercase tracking-widest animate-pulse">
+            Envio Imediato para todo o Brasil
+        </div>
+        <h2 class="text-4xl md:text-6xl font-black font-gaming mb-4 uppercase tracking-tight relative z-10">Setup de <span class="text-blue-500">Elite</span></h2>
+        <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto italic relative z-10">Curadoria definitiva de consoles, portáteis e periféricos originais. Compre com a segurança e a velocidade do <strong>Mercado Livre Full</strong>.</p>
     </div>
 
-    <section class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <section class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/510uTH98LWL._AC_SX679_.jpg" alt="PS5 Slim">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col relative">
+            <div class="absolute top-3 left-3 badge-full text-[9px] px-2 py-1 rounded shadow-lg z-10">#1 MAIS VENDIDO</div>
+            <div class="img-container mb-5 mt-4">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_753443-MLU74384482431_022024-O.webp" alt="PS5 Slim 1TB">
             </div>
-            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Console Next-Gen</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">PlayStation®5 Slim + 2 Jogos</h4>
-            <a href="https://meli.la/13oZUyZ" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Comprar Agora</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Console Next-Gen</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">PlayStation®5 Slim 1TB + 2 Jogos</h4>
+            <div class="mt-auto">
+                <div class="text-green-500 text-[10px] font-bold mb-3 uppercase tracking-wide"><i class="fas fa-bolt"></i> Frete Full Grátis</div>
+                <a href="https://meli.la/13oZUyZ" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase shadow-lg shadow-blue-900/30 hover:bg-blue-500">Comprar Agora</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/61y6h-Ir9PL._AC_SX679_.jpg" alt="DualSense">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_672520-MLA45347209774_032021-O.webp" alt="DualSense Black">
             </div>
-            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Controle Sem Fio</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">DualSense Midnight Black</h4>
-            <a href="https://lista.mercadolivre.com.br/dualsense-ps5" target="_blank" class="block w-full py-3 border border-blue-500 text-blue-500 rounded-xl text-xs font-black text-center transition uppercase hover:bg-blue-600 hover:text-white">Ver Oferta</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Controle Sem Fio</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">DualSense Midnight Black (PS5)</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/dualsense-ps5" target="_blank" class="block w-full py-3 border border-blue-500 text-blue-500 rounded-xl text-xs font-black text-center transition uppercase hover:bg-blue-600 hover:text-white">Ver Oferta</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/61p-3FfS3dL._AC_SX679_.jpg" alt="R36S">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col relative">
+            <div class="absolute top-3 right-3 bg-purple-600 text-white text-[9px] font-bold px-2 py-1 rounded z-10 uppercase tracking-widest">Sucesso</div>
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_667230-MLU74507024823_022024-O.webp" alt="R36S Handheld">
             </div>
-            <span class="text-[10px] font-bold text-purple-500 uppercase tracking-widest">Console Portátil</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">R36S Retro Handheld 64GB</h4>
-            <a href="https://lista.mercadolivre.com.br/r36s" target="_blank" class="block w-full py-3 bg-purple-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Ver Portáteis</a>
+            <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Retro Gaming</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Console Portátil R36S 64GB (10 Mil+ Jogos)</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/r36s" target="_blank" class="block w-full py-3 border border-purple-500 text-purple-400 rounded-xl text-xs font-black text-center transition uppercase hover:bg-purple-600 hover:text-white">Conferir Preço</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/61S98mky6dS._AC_SX679_.jpg" alt="Pulse 3D">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_888497-MLA44030613247_112020-O.webp" alt="Pulse 3D Wireless">
             </div>
-            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Áudio 3D</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">Headset Pulse 3D Wireless</h4>
-            <a href="https://lista.mercadolivre.com.br/pulse-3d" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Comprar Agora</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Áudio Competitivo</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Headset Pulse 3D Wireless Sony</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/pulse-3d" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase shadow-lg shadow-blue-900/30 hover:bg-blue-500">Comprar Agora</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/51yJ7f2AtnL._AC_SX679_.jpg" alt="Nintendo Switch">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_833333-MLA51478149868_092022-O.webp" alt="Nintendo Switch OLED">
             </div>
-            <span class="text-[10px] font-bold text-red-500 uppercase tracking-widest">Nintendo</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">Nintendo Switch OLED 64GB</h4>
-            <a href="https://lista.mercadolivre.com.br/nintendo-switch-oled" target="_blank" class="block w-full py-3 bg-red-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Ver Preço</a>
+            <span class="text-[10px] font-bold text-red-500 uppercase tracking-widest mb-1">Portabilidade Máxima</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Nintendo Switch OLED 64GB Branco</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/nintendo-switch-oled" target="_blank" class="block w-full py-3 border border-red-500 text-red-500 rounded-xl text-xs font-black text-center transition uppercase hover:bg-red-600 hover:text-white">Ver Oferta</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/51S39E7uKNL._AC_SX679_.jpg" alt="Base Carregadora">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_994966-MLU72619028972_112023-O.webp" alt="Monitor Gamer">
             </div>
-            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Acessórios</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">Base de Carregamento DualSense</h4>
-            <a href="https://lista.mercadolivre.com.br/base-carregamento-ps5" target="_blank" class="block w-full py-3 border border-white/20 text-white rounded-xl text-xs font-black text-center transition uppercase">Conferir</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Alta Performance</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Monitor Gamer LG UltraGear 144Hz 1ms</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/monitor-gamer-144hz" target="_blank" class="block w-full py-3 border border-blue-500 text-blue-500 rounded-xl text-xs font-black text-center transition uppercase hover:bg-blue-600 hover:text-white">Ver Oferta</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/61N+pU-pP+L._AC_SX679_.jpg" alt="Gift Card">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_900350-MLU74768340263_022024-O.webp" alt="Teclado Mecânico">
             </div>
-            <span class="text-[10px] font-bold text-green-500 uppercase tracking-widest">Créditos</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">Cartão Presente PlayStation Store</h4>
-            <a href="https://lista.mercadolivre.com.br/gift-card-psn" target="_blank" class="block w-full py-3 bg-green-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Resgatar</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">PC Gaming Setup</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Teclado Mecânico Gamer Redragon RGB</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/teclado-mecanico-gamer" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase shadow-lg shadow-blue-900/30 hover:bg-blue-500">Comprar Agora</a>
+            </div>
         </div>
 
-        <div class="glass p-5 rounded-3xl product-card">
-            <div class="img-container mb-4">
-                <img src="https://m.media-amazon.com/images/I/71u96VInK5L._AC_SX679_.jpg" alt="Monitor Gamer">
+        <div class="glass p-5 rounded-3xl product-card flex flex-col">
+            <div class="img-container mb-5">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_600869-MLA44030438676_112020-O.webp" alt="Base Carregadora">
             </div>
-            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Performance</span>
-            <h4 class="font-bold text-sm mb-4 leading-tight">Monitor Gamer 144Hz 1ms Full HD</h4>
-            <a href="https://lista.mercadolivre.com.br/monitor-gamer-144hz" target="_blank" class="block w-full py-3 bg-blue-600 text-white rounded-xl text-xs font-black text-center transition uppercase">Ver Ofertas</a>
+            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Acessórios Essenciais</span>
+            <h4 class="font-bold text-sm mb-4 leading-tight">Base de Carregamento Dupla (DualSense)</h4>
+            <div class="mt-auto">
+                <a href="https://lista.mercadolivre.com.br/base-carregamento-ps5" target="_blank" class="block w-full py-3 border border-white/20 text-white rounded-xl text-xs font-black text-center transition uppercase hover:bg-white/10">Conferir Preço</a>
+            </div>
         </div>
 
     </section>
 
     <footer class="mt-20 py-10 border-t border-white/5 text-center px-4">
-        <p class="text-gray-600 text-[10px] uppercase tracking-widest">Elite Gaming Hub © 2026 | Cascavel - Ceará | Brasil</p>
+        <h3 class="font-gaming font-bold text-xl mb-2">ELITE <span class="text-blue-500">HUB</span></h3>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-4">Parceiro Afiliado Oficial Mercado Livre Brasil</p>
+        <p class="text-gray-600 text-xs">© 2026 Elite Hub. Todos os direitos reservados.</p>
     </footer>
 
 </body>
